@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Boehringer Ingelheim - Training</title>
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	
+		<!--script type="text/javascript" src="content/src/js/jquery.js"></script-->
+		<script language="JavaScript1.2" src="scormdriver.js"></script>
+		<script language="JavaScript1.2">
+		
+		strContentLocation = "content/course.html";  //Put the link to the start of the content here.
+		//strContentLocation = "TestAllFunctions.htm";
+		
+		function LoadContent(){
+			window.scormdriver_content.document.location.href = strContentLocation;
+			//$('#scormdriver_content').css('height', '100%');
+			//$('#scormdriver_content').resize();
+			//document.getElementById('scormdriver_content').src = strContentLocation;
+		}
+		</script>
+		<style>
+		#scormdriver_content {
+			margin: 0;
+			padding: 0;
+			position: relative;
+			left: 0;
+			top: 0;
+			height: 100%;
+			border: none;
+		}
+		</style>
+	</head>
+	<frameset border="0" frameborder="0" framespacing="0" rows="100%,0%,0%,0%" onload="Start()" onbeforeunload="Unload()" onunload="Unload()">
+		<frame id="scormdriver_content" name="scormdriver_content" src="blank.html">
+		<frame name="AICCComm" src="AICCComm.html">
+		<frame name="rusticisoftware_aicc_results" src="blank.html">
+		<frame name="NothingFrame" src="blank.html">
+	</frameset>
+	<noframes>
+		Your browser must be able to view frames for this content to display.
+	</noframes>
+</html>

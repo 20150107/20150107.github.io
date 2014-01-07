@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Shire Demo</title>
+		
+		<!--
+		STYLES
+		-->
+		<link type="text/css" href="css/page.css" rel="stylesheet" />
+		
+		<!--
+		SCRIPTSd
+		-->
+		<script type="text/javascript" src="../../src/js/jquery.js"></script>
+		
+		<script>
+			function initPage() {
+			alert('asdf');
+				if(navigator.userAgent.match(/iPad/i)){
+					//prevent scrolling (also applies when loaded into an iframe)
+					document.addEventListener("touchmove", touchMove, false);
+					function touchMove(event) {
+						// Prevent scrolling on this element
+						event.preventDefault();
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

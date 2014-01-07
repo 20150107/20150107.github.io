@@ -1,0 +1,995 @@
+html * {
+	-webkit-touch-callout: none; /* prevent callout to copy image, etc when tap to hold */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	-webkit-user-select: none; /* prevent copy paste, to allow, change 'none' to 'text' */
+}
+html,body {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	border: none;
+	overflow: hidden;
+	background:transparent;
+	font-family: Tahoma,Simsun,sans-serif;
+}
+
+
+#shell-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 980px;
+	height: 644px;
+	background: url(../skin/bi-nxgn-shell/background.jpg);
+}
+
+
+
+
+/*************************************
+Navigation button rules
+*************************************/
+
+#shell-nav-bar {
+	position: absolute;
+	top: 555px;
+	left: 0;
+}
+
+.btn-label {
+	position: absolute;
+	top: 33px;
+	left: 0px;
+	width: 100%;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	display: none;
+}
+
+#default-nav-bar .shell-btn {
+	position: absolute;
+	cursor: pointer;
+	width:50px;
+	height: 70px;
+	background: url(../skin/bi-nxgn-shell/toolbar.png) no-repeat;
+}
+#default-nav-bar .shell-btn-rollover
+{
+	background-position-y:-86px !important;
+}
+
+#default-nav-bar .btn-next {
+	background-position:-308px 0px;
+
+	left: 567px;
+}
+#default-nav-bar .shell-btn-disabled {
+	background-position-y:  -173px;
+}
+
+
+#default-nav-bar .btn-replay {
+	background-position: -170px 0px;
+	left: 446px;
+}
+
+#default-nav-bar .btn-help {
+	background-position:-63px 0px;
+	left: 117px;
+}
+
+#default-nav-bar .btn-menu {
+
+background-position:-117px 0px;
+	left: 170px;
+}
+
+#default-nav-bar .btn-previous {
+background-position:-238px 0px;
+	left: 508px;
+}
+
+#default-nav-bar .btn-subtitle-toggle {
+
+	background-position: -4px 0px;
+	left: 60px;;
+}
+
+/*************************************
+Default Nav
+*************************************/
+#default-nav-bar {
+	position: absolute;
+	top: 15px;
+	left: 345px;
+	width: 638px;
+	height: 68px;
+}
+
+#default-nav-bar .slide-counter {
+	position: absolute;
+	top: 25px;
+	left: 247px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+	cursor: default;
+}
+
+#default-nav-bar .slide-counter span {
+	float: left;
+	margin: 3px;
+	text-align: center;
+}
+
+#default-nav-bar .slide-counter .slide-counter-current {
+	width: 16px;
+	text-align: right;
+}
+
+#default-nav-bar .slide-counter .slide-counter-total {
+	width: 16px;
+	text-align: left;
+}
+
+
+/*
+ * Subtitle language selection items.
+ */
+#default-nav-bar #lang-select-container {
+	z-index: 999;
+	position: absolute;
+	width: 196px;
+}
+#default-nav-bar #lang-select-btn-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin: 8px 9px 10px;
+}
+#default-nav-bar .btn-subtitle-lang-select {
+	margin: 5px;
+	padding: 10px 5px 10px 5px;
+	width: 158px;
+	border-bottom: 1px solid white;
+	font-size: 13px;
+	font-weight: 700;
+	text-align: left;
+	color: white;
+	cursor: pointer;
+}
+#default-nav-bar .btn-subtitle-lang-select:hover
+{
+	color: #ff8f22;
+}
+
+#default-nav-bar #lang-select-bg-top {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 15px;
+	background: url(../skin/bi-nxgn-shell/subtitles-lang-select-top.png) no-repeat;
+}
+#default-nav-bar #lang-select-bg-middle {
+	position: absolute;
+	top: 15px;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 1px;
+	background: url(../skin/bi-nxgn-shell/subtitles-lang-select-middle.png) repeat-y;
+}
+#default-nav-bar #lang-select-bg-bottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 15px;
+	background: url(../skin/bi-nxgn-shell/subtitles-lang-select-bottom.png)  no-repeat;
+}
+
+#default-nav-bar #lang-overlay {
+	position: absolute;
+	top: -570px;
+	left: -345px;
+	width: 980px;
+	height: 644px;
+}
+
+#default-nav-bar #vrule1 {
+	position: absolute;
+	top: 9px;
+	left: 225px;
+	width: 1px;
+	height: 56px;
+	background-color: #dce9ee;
+}
+#default-nav-bar #vrule2 {
+	position: absolute;
+	left: 425px;
+	top: 9px;
+	width: 1px;
+	height: 56px;
+	background-color: #dce9ee;
+}
+/*************************************
+Subtitle Nav
+*************************************/
+#subtitle-nav-bar {
+	/*
+	 * Controls are hidden by default.
+	 */
+	display: none;
+	
+	position: absolute;
+	top: 6px;
+	left: 705px;
+	
+	width: 275px;
+	height: 83px;
+
+}
+#subtitle-nav-bar .slide-counter {
+	position: absolute;
+	top: 20px;
+left: 92px;
+	color: #fff;
+	font-size: 12px;
+	font-weight: 700;
+}
+#subtitle-nav-bar .slide-counter span {
+	float: left;
+	margin: 3px;
+	text-align: center;
+}
+#subtitle-nav-bar .slide-counter .slide-counter-current {
+	width: 16px;
+	text-align: right;
+}
+#subtitle-nav-bar .slide-counter .slide-counter-total {
+	width: 16px;
+	text-align: left;
+}
+
+
+#subtitle-nav-bar .shell-btn {
+	position: absolute;
+	cursor: pointer;
+	width:36px;
+	height: 36px;
+	background: url(../skin/bi-nxgn-shell/toolbar2.png)  no-repeat;
+}
+#subtitle-nav-bar .btn-subtitle-toggle {
+	top: 27px;
+	left: 32px;
+	background-position: -7px 0px;
+}
+#subtitle-nav-bar .shell-btn-rollover {
+	background-position-y:  -42px!important;
+}
+#subtitle-nav-bar .shell-btn-disabled {
+	background-position-y:-84px!important;
+}
+
+#subtitle-nav-bar .btn-menu {
+	top: 47px;
+	left: 218px;
+	background-position: -90px 0px;
+}
+
+#subtitle-nav-bar .btn-help {
+top: 45px;
+left: 169px;
+background-position: -52px 0px;
+}
+#subtitle-nav-bar .btn-replay {
+	top: 44px;
+	left: 110px;
+	background-position: -130px 0px;
+}
+#subtitle-nav-bar .btn-next {
+	top: 13px;
+	left: 219px;
+background-position: -216px 0px;
+
+}
+#subtitle-nav-bar .btn-previous {
+top: 14px;
+left: 166px;
+background-position: -173px 0px;
+}
+#subtitle-nav-bar .btn-subtitle-previous {
+
+	background-position: -259px 0px;
+}
+#subtitle-nav-bar .btn-subtitle-next {
+
+	background-position: -302px 0px;
+	top:47px;
+}
+/*
+ * Subtitle-specific controls.
+ */
+#subtitle-controls {
+	position: absolute;
+	top: 0px;
+	left: -360px;
+}
+
+
+#subtitle-nav-bar .txt-subtitle-enumerator {
+	position: absolute;
+	top: 35px;
+	width: 40px;
+	font-size: 10px;
+	color: white;
+}
+#subtitle-nav-bar .txt-subtitle-current {
+	position: absolute;
+	top: 14px;
+	left: 50px;
+	width: 325px;
+	height: 63px;
+	font-size: 13px;
+	text-align: left;
+	color: white;
+	overflow-y: auto;
+}
+
+/**
+ * Enable/Disabled button styles
+ **/
+
+#subtitle-nav-bar #vrule3 {
+	position: absolute;
+	top: 17px;
+	left: 80px;
+	width: 8px;
+	height: 64px;
+	background: url(../skin/bi-nxgn-shell/nav-subtitles-vertical-rule.png);
+}
+
+/*************************************
+Header rules
+*************************************/
+
+#header-course-title{
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	text-align: left;
+	color: #fff;
+	width: 320px;
+	display: block;
+	position: absolute;
+	top: 5px;
+	left: 20px;
+	text-decoration: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#header-chapter {
+	position: absolute;
+	top: 10px;
+	left: 375px;
+	margin: 0;
+	display: block;
+	text-decoration: none;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 13px;
+	color: #fff;
+}
+
+#header-page {
+	position: absolute;
+	top: 29px;
+	left: 375px;
+	margin: 0;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+	text-decoration: none;
+	color: white;
+	display: block;
+}
+
+#header-spacer {
+	position: relative;
+	float: left;
+	top: 0px;
+	background:url(../skin/header-spacer.jpg) top left repeat-y;
+	color: #cdbb99;
+	width: 1px;
+	height: 18px;
+	display: block;
+	text-decoration: none;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#header-slide {
+	position: absolute;
+	top: 0px;
+	font-family: Arial, sans-serif;
+	font-size: 18px;
+	text-align: right;
+	color: black;
+	height: 25px;
+	display: block;
+	text-decoration: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	left: 820px;
+	width: 128px;
+}
+
+
+/*************************************
+Onscreen Tips
+*************************************/
+
+#tip-text{
+	background-color: #757575;
+	padding: 6px;
+	color: #FFFFFF;
+	text-align: center;
+	border: 1px solid #fff;
+	font-size: 14px;
+}
+
+#tip-arrow { 
+	position: relative;
+	height: 34px;
+	background-image:url(../skin/bi-nxgn-shell/tip-arrow-down.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	margin-right: 12px;
+	margin-top: -11px;
+}
+
+.tip-btn-next {
+position: absolute;
+top: 525px;
+left: 795px;
+width: 170px;
+height: auto;
+
+}
+
+.tip-btn-replay {
+	position: absolute;
+	top: 531px;
+	left: 622px;
+	width: 300px;
+	height: auto;
+}
+
+#audio-loading-container {
+	position: absolute;
+	top: 260px;
+	left: 375px;
+	width: 185px;
+	height: auto;
+	background-color: #000;
+	padding: 45px;
+	padding-right: 0;
+	color: #FFFFFF;
+	text-align: left;
+	border: 1px solid #fff;
+}
+
+#audio-loading-text{
+	float: left;
+	margin-left: 10px;
+}
+
+#audio-loading-icon {
+	float: left;
+}
+
+
+/*************************************
+Menu rules
+*************************************/
+.popup
+{
+	overflow: hidden;
+	position: relative;
+	
+	left: 64px;
+	top: 0;
+	width: 841px;
+	height: 472px;
+	margin: 0px;
+	padding: 0px;
+	text-align: left;
+	color: #FC5F20;
+	font-family: Arial, sans-serif;
+	background: url(../skin/bi-nxgn-shell/menu/menu-background2.png) no-repeat #fff;
+}
+.popup .title {
+	position: absolute;
+	top: 12px;
+	left: 22px;
+	height: 25px;
+	font-size: 23px;
+	font-weight: 700;
+	padding-bottom: 10px;
+	text-align: left;
+	color: #FFF;
+}
+.popup .close {
+	position: absolute;
+	top: 440px;
+	left: 0px;
+	width: 97%;
+	font-size: 14px;
+	font-weight: 700;
+	color: white;
+	cursor: pointer;
+	text-align: right;
+	height: 31px;
+	line-height: 31px;
+	padding-right: 16px; 
+}
+.popup .close:hover
+{
+	color: #8da3b5;
+}
+
+#course-menu-chapters-container {
+	position: absolute;
+	top: 85px;
+	left: 20px;
+	margin-right: 0;
+	width: 410px;
+	height:322px;
+	margin: 10px;
+	padding: 0px;
+	overflow-y:auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+
+
+#course-menu-close-btn strong {
+	position: absolute;
+	top: 8px;
+	left: 30px;
+	font-size: 18px;
+	font-weight: 700;
+	color: #fff;
+}
+
+
+
+#course-menu-rule {
+	position: absolute;
+	top: 77px;
+	left: 446px;
+	width: 12px;
+	height: 356px;
+	background-image: url(../skin/bi-nxgn-shell/menu/menu-rule.png);
+	background-repeat: repeat-y;
+}
+
+#course-menu-pages-container {
+	position: absolute;
+	top: 85px;
+	left: 528px;
+	width: 288px;
+	height: 192px;
+}
+
+#menu-pages-container-arrow {
+	position: absolute;
+	left: -17px;
+	top: 44px;
+	width: 20px;
+	height: 30px;
+	background-image: url(../skin/menu-pages-container-arrow.png);
+}
+
+
+
+
+
+
+
+
+
+.course-menu-chapter {
+	font-size: 16px;
+	position: relative;
+	width: 264px;
+	height:32px;
+	color: #082f4e;
+	margin-bottom: 5px;
+	cursor: pointer;
+	text-indent: 10px;
+	line-height: 32px;
+	font-weight: bold;
+}
+.course-menu-chapter-active,.course-menu-chapter-hover {
+	background-color:#2DA9BC;
+	color: #FFF;
+	border-radius:4px;
+}
+
+
+
+.chapter-pages-menu-title {
+	position: relative;
+	top: 0px;
+	left: 5px;
+	font-size: 16px;
+	font-weight: 700;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: #082f4e;
+}
+
+
+
+.course-menu-page {
+	position: relative;
+	width: 178px;
+	height: 25px;
+	color: #082f4e;
+	margin-bottom: 5px;
+	cursor: pointer;
+	text-indent: 30px;
+	font-size: 13px;
+	margin-left: 16px;
+	line-height: 25px;
+	
+	
+}
+
+.course-menu-page-current,.course-menu-page-enabled-hover,.course-menu-page-enabled:active {
+	background-color:#2DA9BC;
+	color: #FFF;
+	border-radius:4px;
+}
+.menu-pages-complete-check {
+	position: absolute;
+	left: 10px;
+	top: 4px;
+	width: 15px;
+	height: 15px;
+	overflow: hidden;
+	background-image: url(../skin/bi-nxgn-shell/menu/checkmark.png);
+}
+
+.course-menu-page-enabled-hover .menu-pages-complete-check, .course-menu-page-enabled:active .menu-pages-complete-check, .course-menu-page-current .menu-pages-complete-check {
+	background-position: 0 15px !important;
+}
+
+
+.course-menu-page-disabled {
+	cursor: default;
+	color: #999;
+}
+
+.course-menu-page-disabled .menu-pages-complete-check
+{
+	display: none;
+}
+
+/*************************************
+Help screen rules
+*************************************/
+
+
+#help-container .vrule {
+position: absolute;
+top: 67px;
+left: 320px;
+width: 1px;
+height: 229px;
+border-left: 1px solid #225c9c;
+}
+
+
+#help-item-container {
+	position: absolute;
+	top: 73px;
+}
+
+.help-item {
+position: absolute;
+width: 272px;
+left: 338px;
+
+}
+
+.help-item-icon {
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	width: 40px;
+	height: 40px;
+}
+
+.help-item-title {
+position: absolute;
+top: 5px;
+left: 42px;
+font-size: 15px;
+color: #225c9c;
+}
+
+.help-item-description {
+position: absolute;
+top: 22px;
+left: 42px;
+font-size: 12px;
+}
+
+#help-item-next {
+	top: 0px;
+	left: 20px;
+}
+#help-item-next .help-item-icon {
+	background: url(../skin/bi-nxgn-shell/help/icon-next.png);
+}
+
+#help-item-previous {
+	top: 70px;
+	left: 20px;
+}
+#help-item-previous .help-item-icon {
+	background: url(../skin/bi-nxgn-shell/help/icon-previous.png);
+}
+
+#help-item-menu {
+	top: 140px;
+	left: 20px;
+}
+#help-item-menu .help-item-icon {
+	background: url(../skin/bi-nxgn-shell/help/icon-menu.png);
+}
+
+#help-item-help {
+	top: 0px;
+
+}
+#help-item-help .help-item-icon {
+	background: url(../skin/bi-nxgn-shell/help/icon-help.png);
+}
+
+#help-item-replay {
+	top: 70px;
+
+}
+#help-item-replay .help-item-icon {
+	background: url(../skin/bi-nxgn-shell/help/icon-replay.png);
+}
+
+#help-item-subtitles {
+	top: 160px;
+
+}
+#help-item-subtitles .help-item-icon {
+	background: url(../skin/bi-nxgn-shell/help/icon-subtitles.png);
+}
+
+/*************************************
+Loading screen rules
+*************************************/
+
+.load-msg-box {
+	margin: auto;
+	margin-top: 220px;
+	width: 338px;
+	height: 152px;
+	background: url(../skin/bi-nxgn-shell/loading-box.png) no-repeat;
+}
+
+
+.load-msg-text {
+	position: absolute;
+	top: 290px;
+	left: 460px;
+	font-size: 18px;
+	color: #082f4e;
+}
+
+#main-load-screen {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: url(../skin/sb-overlay.png);
+	z-index: 999;
+}
+
+#audio-load-screen {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 980px;
+	height: 600px;
+}
+
+#loadScreen {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+
+#loadScreen img {
+	position: absolute;
+	top: 321px;
+	left: 455px;
+	margin: 0px;
+	padding: 0px;
+}
+
+#loadScreen p {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 323px;
+	left: 16px;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: 200;
+	margin: 0px;
+	padding: 0px;
+}
+
+#loadScreenOverlay {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	margin: 0px;
+	padding: 0px;
+}
+
+
+/*************************************
+These rules never change!
+*************************************/
+
+#shell,#populateIOSLaunch {
+	position: relative;
+	overflow: hidden;
+	top: 0px;
+	left: 0px;
+	width: 980px;
+	height: 644px;
+	border: 1px #63bbc8 solid;
+
+	display: none;
+}
+
+#skin {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+#contentFrame {
+	position: relative;
+	top: 0px;
+	left: 0px;
+}
+
+#jquery_jplayer_1, #jquery_jplayer_1 img, #jquery_jplayer_1 object{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block !important;
+	height: 1px !important;	
+	width: 1px !important;	
+}
+
+#sb-overlay {
+	background-image: url(../skin/sb-overlay.png);
+}
+
+#sb-body {
+	background-color: transparent;
+}
+
+#sb-wrapper-inner {
+	border: none;
+}
+
+#sb-title{
+	height: 48px; 
+}
+
+#sb-info {
+	height: 79px;
+}
+
+#sb-title-inner, #sb-info-inner, #sb-loading-inner, div.sb-message,.load-msg-text {
+	font-family: Arial, sans-serif;
+}
+.bookmark-prompt-btn
+{
+	background: url(../skin/bi-nxgn-shell/bt.png) no-repeat;
+	width: 68px;
+	height: 32px;
+	margin-right: 12px;
+	margin-left: 238px;
+	margin-top: 200px;
+	text-align: center;
+	line-height: 32px;
+	color: white;
+	float: left;
+}
+#bookmark-prompt-btn-no
+{
+	margin-left: 27px;
+}
+
+#bookmark-prompt-message
+{
+	position: absolute;
+	top: 112px;
+	color: black;
+	font-size: 26px;
+	left: 66px;
+}
+#populateIOSLaunch
+{
+	background: url(../skin/bi-nxgn-shell/background.jpg);
+}
+.sb-overlay
+{
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: url(../skin/sb-overlay.png);
+	z-index: 999;
+
+}
+#laughPresentation
+{
+	background: red;
+	width: 68px;
+	height: 32px;
+	position: absolute;
+	left: 46%;
+	top: 45%;
+	background: url(../skin/bi-nxgn-shell/bt.png);
+	color: #fff;
+	text-align: center;
+	line-height: 32px;
+	font-family: "Tahoma"
+	
+}

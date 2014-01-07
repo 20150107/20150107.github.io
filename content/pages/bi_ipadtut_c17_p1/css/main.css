@@ -1,0 +1,12 @@
+h2{
+	margin-left: 650px;
+	margin-top: 170px;
+	font-size:26px;
+}
+ul{ margin-left:570px;}
+
+.image { position:absolute; top:170px; left:40px; }
+.image img { width:590px; }
+
+.image2 { position:absolute; top:96px; left:40px; }
+.image2 img { width:590px; }
